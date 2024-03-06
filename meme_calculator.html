@@ -20,16 +20,16 @@
             <button onclick="calculateProgress()">Calculate Progress</button>
             <script>
                 function calculateProgress() {
-                            var goal = parseFloat(document.getElementById('goal').value);
-                            var currentSavings = parseFloat(document.getElementById('current-savings').value);
+                            var goal = parseFloat(document.getId('goal').value);
+                            var currentSavings = parseFloat(document.getId('current-savings').value);
                             
                             var progress = (currentSavings / goal) * 100;
                             if(progress > 100) {
                                 progress = 100; // Limit progress to 100%
                             }
                             
-                            document.getElementById('progress-bar').style.width = progress + '%';
-                            document.getElementById('progress-message').textContent = 'Progress: ' + progress.toFixed(2) + '%';
+                            document.getId('progress-bar').style.width = progress + '%';
+                            document.getId('progress-message').textContent = 'Progress: ' + progress.toFixed(2) + '%';
                         }
             </script>
         </section>
