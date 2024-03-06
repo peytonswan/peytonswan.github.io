@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loss Aversion Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Loss Aversion Calculator</h1>
+    </header>
+    <main>
+        <section id="goal-setting">
+            <h2>Goal Setting</h2>
+            <label for="goal">Enter Your Financial Goal:</label>
+            <input type="number" id="goal" placeholder="Enter your goal amount">
+            <label for="current-savings">Current Savings:</label>
+            <input type="number" id="current-savings" placeholder="Enter your current savings">
+            <button onclick="calculateProgress()">Calculate Progress</button>
+        </section>
+        <section id="progress-tracker">
+            <h2>Progress Tracker</h2>
+            <div id="progress-bar">
+                <!-- Progress bar will be dynamically filled -->
+            </div>
+            <p id="progress-message"></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
