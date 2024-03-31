@@ -16,24 +16,24 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.scale(scale, scale);
 
         // Example drawing (this could be your plot or any other visualization)
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = 'yellow';
         ctx.fillRect(-25, -25, 50, 50); // Draw a square centered on the origin
     }
 
     document.addEventListener('keydown', function(event) {
         const key = event.key.toLowerCase();
         switch (key) {
-            case 'w':
-                offsetY += 10; // Scroll up
-                break;
-            case 'a':
-                offsetX += 10; // Scroll left
-                break;
             case 's':
-                offsetY -= 10; // Scroll down
+                offsetY += 10; // Scroll down
                 break;
             case 'd':
-                offsetX -= 10; // Scroll right
+                offsetX += 10; // Scroll right
+                break;
+            case 'w':
+                offsetY -= 10; // Scroll up
+                break;
+            case 'a':
+                offsetX -= 10; // Scroll left
                 break;
             case 'p':
                 scale *= 1.1; // Zoom in
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'r':
             case 'h':
-            case 'd':
+            
                 // Reset to defaults
                 offsetX = 0;
                 offsetY = 0;
