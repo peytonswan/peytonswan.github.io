@@ -4,4 +4,9 @@ document.addEventListener('keydown', function(event) {
         // For simplicity, we're just logging to the console
         console.log('G key was pressed');
     }
+document.getElementById('runButton').addEventListener('click', function() {
+    // Add logic to start the character animation
+document.getElementById('character').style.animationPlayState = 'running';
 });
+
+
