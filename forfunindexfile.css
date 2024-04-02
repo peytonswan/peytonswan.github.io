@@ -1,1 +1,23 @@
+body {
+    background-color: #333; /* Dark background for contrast */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+#character {
+    width: 50px; /* Character width */
+    height: 100px; /* Character height */
+    background-color: blue; /* Simple color to represent the character */
+    position: relative;
+    animation: runAcross 5s linear infinite; /* Animation named runAcross */
+}
+
+/* Keyframes for running animation */
+@keyframes runAcross {
+    from {
+        left: -60px;
+    }
+    to {
+        left: 100%;
+    }
+}
 
