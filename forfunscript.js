@@ -1,6 +1,10 @@
 document.addEventListener('keydown', function(event) {
     if (event.key === "g") { // When the "g" key is pressed
-        // Add class or trigger animation here
+        function runCharacter() {
+            var character = document.querySelector('.character');
+            character.style.animationPlayState = 'running';
+    }
+
         // For simplicity, we're just logging to the console
         console.log('G key was pressed');
     }
