@@ -69,6 +69,32 @@
     background-color: silver;
     box-shadow: 0 0 3em white;
   }
+  .stars, .twinkl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .stars {
+    background: #000 URL(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center; z-index: 0;
+  }
+    .twinkl{
+      background: transparent URL(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; z-index: 0;
+      -moz-animation: move-twink-back 200s linear infinite;
+      -ms-animation: move-twink-back 200s linear infinite;
+      -o-animation: move-twink-back 200s linear infinite;
+      animation: move-twink-back 200s linear infinite;
+    }
+    @keyframes move-twink-back{
+      from {background-positive: 0;}
+      to {background-position: -10000px 5000px;}
+    }
+    
+  
   @keyframes orbit {
     to {
       transform: rotate(360deg);
@@ -81,6 +107,8 @@
         <div class="sun"></div>
         <div class="earth"></div>
         <div class="moon"></div>
+      <div class="stars"></div>
+      <div class="twinkl"></div>
          
         
         <!-- Add more planets as needed -->
