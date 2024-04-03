@@ -1,118 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head> 
-  <style>
-      body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-  }
-  .container {
-    font-size: 10px;
-    width: 40em;
-    height: 40em;
-    position: relative;
-  }
-  .sun {
-    position: absolute;
-    top: 15em;
-    left: 15em;
-    width: 10em;
-    height: 10em;
-    background-color: yellow;
-    border-radius: 50%;
-    box-shadow: 0 0 3em white;
-  }
-  .earth, .moon {
-    position: absolute;
-    border-style: solid;
-    box-shadow: 0 0 3em white transparent transparent transparent;
-    border-width: 0.1em;
-    border-radius: 50%;
-    
-  }
-  .earth {
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em;
-    animation: orbit 36.5s linear infinite; 
-  }
-  .moon {
-    top: 0;
-    right: 0;
-    width: 8em;
-    height: 8em;
-    animation: orbit 2.6s linear infinite;
-  }
-  .earth::before, .moon::before {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-  }
-  .earth::before {
-    top: 2.8em;
-    right: 2.8em;
-    width: 3em;
-    height: 3em;
-    background-color: aqua;
-    box-shadow: 0 0 3em white;
-  }
-  .moon::before {
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background-color: silver;
-    box-shadow: 0 0 3em white;
-  }
-  .stars, .twinkl {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  .stars {
-    background: #000 URL(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center; z-index: 0;
-  }
-    .twinkl{
-      background: transparent URL(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; z-index: 0;
-      -moz-animation: move-twink-back 200s linear infinite;
-      -ms-animation: move-twink-back 200s linear infinite;
-      -o-animation: move-twink-back 200s linear infinite;
-      animation: move-twink-back 200s linear infinite;
+<head>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
     }
-    @keyframes move-twink-back{
-      from {background-positive: 0;}
-      to {background-position: -10000px 5000px;}
+    .container {
+        font-size: 10px;
+        width: 50em; /* Increased to fit Earth's orbit */
+        height: 50em; /* Increased to fit Earth's orbit */
+        position: relative;
     }
-    
-  
-  @keyframes orbit {
-    to {
-      transform: rotate(360deg);
+    .sun {
+        position: absolute;
+        top: 20em; /* Adjusted for new container size */
+        left: 20em; /* Adjusted for new container size */
+        width: 10em;
+        height: 10em;
+        background-color: yellow;
+        border-radius: 50%;
+        box-shadow: 0 0 3em white;
     }
-  }
+    .earth-orbit {
+        position: absolute;
+        top: 5em;
+        left: 5em;
+        width: 40em; /* Increased for Earth's orbit path */
+        height: 40em; /* Increased for Earth's orbit path */
+        border-radius: 50%;
+        animation: orbit 36.5s linear infinite;
+    }
+    .earth {
+        position: absolute;
+        top: 0;
+        left: 50%; /* Center Earth in its orbit */
+        transform: translateX(-50%);
+        width: 5em; /* Adjusted size */
+        height: 5em; /* Adjusted size */
+        background-color: aqua;
+        border-radius: 50%;
+        box-shadow: 0 0 3em aqua;
+    }
+    .moon {
+        position: absolute;
+        top: -2em; /* Adjust to orbit around Earth */
+        left: 7em; /* Distance from Earth */
+        width: 1.5em; /* Adjusted size */
+        height: 1.5em; /* Adjusted size */
+        background-color: silver;
+        border-radius: 50%;
+        animation: moonOrbit 2.6s linear infinite;
+    }
+    .stars, .twinkl {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Ensure they are behind everything */
+        display: block;
+    }
+    .stars {
+        background: #000 URL('http://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
+    }
+    .twinkl {
+        background: transparent URL('http://www.script-tutorials.com/demos/360/images/twinkling.png') repeat top center;
+        animation: move-twink-back 200s linear infinite;
+    }
+    @keyframes move-twink-back {
+        from { background-position: 0; }
+        to { background-position: -10000px 5000px; }
+    }
+    @keyframes orbit {
+        from { transform: rotate(0); }
+        to { transform: rotate(360deg); }
+    }
+    @keyframes moonOrbit {
+        from { transform: rotate(0) translateX(7em) rotate(0); }
+        to { transform: rotate(360deg) translateX(7em) rotate(-360deg); }
+    }
 </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sun"></div>
-        <div class="earth"></div>
-        <div class="moon"></div>
-      <div class="stars"></div>
-      <div class="twinkl"></div>
-         
-        
-        <!-- Add more planets as needed -->
-   
+<div class="container">
+    <div class="stars"></div>
+    <div class="twinkl"></div>
+    <div class="sun"></div>
+    <div class="earth-orbit">
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
-
