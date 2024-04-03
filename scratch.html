@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <style>
+        
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #F7E7CE;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        /* Additional styles for 3D slider and cleanup */
+        .slider {
+            perspective: 1000px; /* Create perspective */
+            width: 70%;
+            margin: 20px auto; /* Center the slider */
+        }
+        .slide {
+            width: 100%;
+            margin: 0 auto;
+            transition: transform 1s;
+            transform-style: preserve-3d; /* Enable 3D effect */
+        }
+        /* Placeholder classes for logo images */
+        .sql-logo, .python-logo, .css-logo, .js-logo {
+            width: 100%; /* Adjust based on your preference */
+            height: 200px; /* Adjust based on your preference */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .sql-logo { background-image: url('SQL-logo-placeholder.jpg'); }
+        .python-logo { background-image: url('Python-logo-placeholder.jpg'); }
+        .css-logo { background-image: url('CSS-logo-placeholder.jpg'); }
+        .js-logo { background-image: url('JS-logo-placeholder.jpg'); }
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Header content unchanged -->
+    </header>
+
+    <!-- Image slider placeholder -->
+    <div class="slider">
+        <div class="slide sql-logo"></div>
+        <div class="slide python-logo"></div>
+        <div class="slide css-logo"></div>
+        <div class="slide js-logo"></div>
+    </div>
+
+
+    <!-- Main content area -->
+    <main>
+        <section>
+            <p>My Personal Website now in HTML!</p>
+            <p>Below are links to my resume, assignments for this class, and more!</p>
+            
+            <h2><a href="https://peytonswan.github.io/resume.html">Resume</a></h2>
+            <h2><a href="https://www.linkedin.com/in/your-profile">LinkedIn</a></h2>
+            <h2><a href="https://peytonswan.github.io/solar_system.html">Solar System Project</a></h2>
+            <h2><a href="https://peytonswan.github.io/plot.html">Plot Cube</a></h2>
+            <h2><a href="https://peytonswan.github.io/Assignments.html">Assignments</a></h2>
+            <h2><a href="https://peytonswan.github.io/forfunindexfile.html">For Fun</a></h2>
+            <!-- Additional links or content can go here -->
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; DATA-352W PAGE 2024</p>
+    </footer>
+</body>
+</html>
+
