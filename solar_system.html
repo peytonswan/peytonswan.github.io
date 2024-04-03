@@ -29,10 +29,10 @@
   .earth, .moon {
     position: absolute;
     border-style: solid;
-    border-color: white transparent transparent transparent;
+    border-color: white transparent transparent transparent; box-shadow: 0 0 3em white;
     border-width: 0.1em;
     border-radius: 50%;
-    box-shadow: 0 0 3em white;
+    
   }
   .earth {
     top: 5em;
@@ -59,6 +59,7 @@
     width: 3em;
     height: 3em;
     background-color: aqua;
+    box-shadow: 0 0 3em white;
   }
   .moon::before {
     top: 0.8em;
@@ -66,6 +67,7 @@
     width: 1.2em;
     height: 1.2em;
     background-color: silver;
+    box-shadow: 0 0 3em white;
   }
   @keyframes orbit {
     to {
