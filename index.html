@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
     <style>
         body {
             font-family: 'Press Start 2P', cursive;
@@ -11,6 +12,8 @@
             color: #333;
             margin: 0;
             padding: 0;
+            position: relative;
+            min-height: 100vh;
         }
         header {
             background-color: #B4CFEC;  
@@ -18,7 +21,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-		
         }
         header::before {
             content: '';
@@ -32,100 +34,108 @@
             transition: transform 0.5s;
             border-radius: 50%;
             pointer-events: none;
+
         }
         header:hover::before {
             transform: scale(2);
+           
         }
-        header:hover {
-            background-color: #6495ED; 
-		
-        }
-        section h2, header h1 {
-            text-decoration: none;
-        }
-        section h2 {
-            color: #ff1654;
-            font-family: "Courier New", Courier, monospace;
-        }
-        header h1 {
-            font-size: calc(24px + (24px / 3));
-            text-transform: uppercase;
-            margin: 0;
-            padding: 10px;
-            display: inline;
-            color: #4d2600;
-            text-decoration: none;
+        header h1, .pixelized {
+            font-size: 14px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #900C3F;
+            margin: 10px 0;
         }
         .pixelized {
             font-family: 'Press Start 2P', cursive;
-            font-size: 36px;
+            font-size: 24px;
             color: #ff1654;
             text-transform: uppercase;
             display: inline-block;
             letter-spacing: 0.1em;
             text-shadow: 1px 1px 0 #000;
-            -webkit-font-smoothing: none;
-            -moz-osx-font-smoothing: grayscale;
         }
-        section {
-            text-align: left;
-            margin-left: 20px;
+        .pixelized a, header h1 a {
+            color: inherit;
+            text-decoration: none;
         }
-        section p {
-	    font-family: "Courier New", Courier, monospace;
-	    font-size: 15px;
-	    color: #900C3F;
-	    line-height: 1.6;
-	    text-align: justify;
-	    padding-right: 20px;
-	}
-
+        .slider {
+            perspective: 1000px;
+            width: 20%;
+            position: absolute;
+            bottom: 100px;
+            right: 20px;
+            z-index: 10;
+        }
+        .sql-logo, .python-logo, .css-logo, .js-logo {
+            width: 100%;
+            height: 200px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* Update these paths with your actual images */
+        .sql-logo { background-image: url('https://logodix.com/logo/541959.jpg'); }
+        .python-logo { background-image: url('Python-logo-placeholder.jpg'); }
+        .css-logo { background-image: url('CSS-logo-placeholder.jpg'); }
+        .js-logo { background-image: url('JS-logo-placeholder.jpg'); }
+        footer {
+            background-color: #B4CFEC;
+            padding: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 </head>
 <body>
     <header>
-        <div>
-            <h1 style="font-size: 14px; font-family: 'Courier New', Courier, monospace; color: #900C3F;">
-                <a href="https://github.com/peytonswan/peytonswan.github.io" style="text-decoration: none; color: inherit;">
-                Website created with: Python, C++, JavaScript, SQL, and HTML
-                </a>
-            </h1>
-            <br>
-           
-            <br>
-            <h1  color: #FAF884; class="pixelized">Welcome to my DATA-352W Page<a href="https://github.com/peytonswan/peytonswan.github.io" style="text-decoration: none; color: inherit;">!</a></h1>
-            <br>
-            <h1 style="font-size: 14px; font-family: 'Courier New', Courier, monospace; color: #900C3F;"> Website created by: Peyton Swan </h1>
-        </div>
+    
+        <h1 class="pixelized">
+            Welcome to my DATA-352W Page
+            <a href="https://github.com/peytonswan/peytonswan.github.io">!</a>
+        </h1>
+        <h1>Website created by: Peyton Swan</h1>
     </header>
-</body>
 
-   <body>
-	   
-    <p padding: 20px; text-align: center;" > My Personal Website now in <b> HTML! </b></p>
-     <p padding: 20px; text-align: center;" > Below are links to my resume, assignments for this class, and more! <b> 
-</b></p>
+    <main>
+        <section>
+            <p>My Personal Website now in HTML!</p>
+            <p>Below are links to my resume, assignments for this class, and more!</p>
+            
+            <h2><a href="https://peytonswan.github.io/resume.html">Resume</a></h2>
+            <h2><a href="https://www.linkedin.com/in/your-profile">LinkedIn</a></h2>
+            <h2><a href="https://peytonswan.github.io/solar_system.html">Solar System Project</a></h2>
+            <h2><a href="https://peytonswan.github.io/plot.html">Plot Cube</a></h2>
+            <h2><a href="https://peytonswan.github.io/Assignments.html">Assignments</a></h2>
+            <h2><a href="https://peytonswan.github.io/forfunindexfile.html">For Fun</a></h2>
+        </section>
+    </main>
+
+    <!-- Image slider -->
+    <div class="slider">
+        <div class="slide sql-logo"></div>
+        <div class="slide python-logo"></div>
+        <div class="slide css-logo"></div>
+        <div class="slide js-logo"></div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        let count = 0;
+        setInterval(() => {
+            count++;
+            slider.style.transform = `rotateY(${count * 90}deg)`;
+        }, 2000);
+    </script>
     
-     <h1><a href = "https://peytonswan.github.io/resume.html"> Resume </a></h1></p>
-	    <h1><a href = " <h1><a href = "https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile> LinkedIn </a></h1></p>
-   
-     <h1><a href = "https://peytonswan.github.io/solar_system.html"> Solar System </a></h1></p>
-        <h1><a href = "https://peytonswan.github.io/plot.html"> Plot Cube </a></h1></p>
-	     <h1><a href = "https://peytonswan.github.io/Assignments.html"> Assignments </a></h1></p>
-	       <h1><a href = "https://peytonswan.github.io/forfunindexfile.html"> Not Finished </a></h1></p>
-	    <h1><a href = "https://peytonswan.github.io/scratch.html"> Edits </a></h1></p>
-	   
-        
     
-<body>
-<footer style="background-color: #B4CFEC; padding: 20px; text-align: center;">
-    <p style="color: #fff; font-size: 14px; class="pixelized"> &copy; DATA-352W PAGE 2024    
-     <center> 
-              <p style = "color: #fff; font-size: 10px;"> 
-	
-	      </p> </center>
-     <!-- These are the languages I know --></p>
-</footer>
-   </body>
-  </html>
+        <footer style="background-color: #8bd0f3; padding: 20px; text-align: center;">
+        <p style="color: #fff; font-size: 14px;">Website created with: Python, C++, JavaScript, SQL, and HTML<a href="https://github.com/peytonswan/peytonswan.github.io">!</a>
+        </p>
+        <p style="color: #fff; font-size: 14px;">&copy; DATA-352W PAGE 2024</p>
+    </footer>
+</body>
+</html>
+
